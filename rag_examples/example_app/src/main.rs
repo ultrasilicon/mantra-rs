@@ -1,9 +1,11 @@
 fn process(items: &[u32]) -> u32 {
-    helper(items)
-}
-
-fn helper(items: &[u32]) -> u32 {
-    items.iter().filter(|&&x| x % 2 == 0).map(|&x| x * 2).sum()
+    let mut sum = 0;
+    for x in items {
+        if x % 2 == 0 {
+            sum += x * 2;
+        }
+    }
+    sum
 }
 
 fn main() {
